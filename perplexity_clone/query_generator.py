@@ -6,9 +6,9 @@ from json import loads
 
 __all__ = ["generate_queries"]
 
-if __name__ == "__main__":
-    load_dotenv()
-    configure(api_key=getenv("GEMINI_API_KEY"))
+#if __name__ == "__main__":
+load_dotenv()
+configure(api_key=getenv("GEMINI_API_KEY"))
 
 # Create the model
 generation_config = {
@@ -105,7 +105,7 @@ Remember: Your goal is to generate queries that will lead to high-quality, relev
 The Max number of queries is {getenv("MAX_ALTERNATE_QUERY")}
 """
 model = GenerativeModel(
-    model_name="gemini-2.0-flash-exp",
+    model_name="gemini-1.5-pro",
     generation_config=generation_config,
     system_instruction=system_instruction,
 )

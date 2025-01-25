@@ -8,6 +8,10 @@ authors = [
 dependencies = [
     "python-dotenv>=1.0.1",
     "google-generativeai>=0.8.3",
+    "duckduckgo-search>=7.2.1",
+    "beautifulsoup4>=4.12.3",
+    "ipykernel>=6.29.5",
+    "streamlit>=1.41.1",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -18,8 +22,12 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "ipykernel>=6.29.5",
+]
 
+[tool.rye.scripts]
+app = "python  -m streamlit run ./perplexity_clone/app.py --server.enableCORS=false"
 [tool.hatch.metadata]
 allow-direct-references = true
 
